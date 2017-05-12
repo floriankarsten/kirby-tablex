@@ -9,6 +9,7 @@ Be patient with us, its our first field :). And don't be mad that it uses Vue.js
 ## TODO:
 - Ui design + css @krisak + @mightybart
 - Documentation @krisak
+- Make it work!
 
 
 ## Usage
@@ -52,5 +53,5 @@ Link to latest version https://github.com/floriankarsten/kirby-tablex/releases/l
 
 ### With Git
 ```git clone https://github.com/floriankarsten/kirby-tablex/releases.git tablex```
-You can of course have it as submodule. There won't be many updates.
+You can of course have it as submodule.
 
