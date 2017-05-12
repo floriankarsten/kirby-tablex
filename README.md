@@ -9,3 +9,48 @@ Be patient with us, its our first field :). And don't be mad that it uses Vue.js
 ## TODO:
 - Ui design + css @krisak + @mightybart
 - Documentation @krisak
+
+
+## Usage
+
+As any field in blueprint:
+```yaml
+  table:
+    label: table
+    type: tablex
+    options: 
+      maxColumns: 10
+      minColumns: 3
+      header: false
+```
+
+Options are not required. Defaults are:
+```yaml
+        maxColumns: 10
+        minColumns: 1
+        header: false
+```
+
+
+
+## Installation
+To install the plugin, please put it in the `site/plugins` directory.  
+The plugin folder must be named `tablex`.
+
+```
+site/plugins/
+    tablex/
+        tablex.php
+        ...
+```
+
+### Download
+Link to latest version https://github.com/floriankarsten/kirby-tablex/releases/latest
+
+### With Kirby CLI
+```kirby plugin:install floriankarsten/kirby-tablex```
+
+### With Git
+```git clone https://github.com/floriankarsten/kirby-tablex/releases.git tablex```
+You can of course have it as submodule. There won't be many updates.
+

@@ -1,0 +1,8 @@
+{
+  "name": "kirby-tablex",
+  "description": "Kirby table field plugin",
+  "author": "Florian Karsten <mail@floriankarsten.com>",
+  "version": "0.1",
+  "type": "kirby-field",
+  "license": "MIT"
+}
