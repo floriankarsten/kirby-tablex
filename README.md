@@ -2,3 +2,4 @@
 
 ## TODO:
 - Ui design + css @krisak and @mightybart
+- Documentation @krisak
