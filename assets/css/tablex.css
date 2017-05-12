@@ -1,0 +1,248 @@
+.tablex-field > .tablex-setup,
+.tablex-field > .tablex-setup > div,
+.tablex-field > .tablex-setup > div > input {
+	display: none;
+	pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.tablex-field > .tablex-controller {
+	display: flex;
+	margin: 0 0 .5em 0;
+	font-size: 1em;
+}
+
+.tablex-field > .tablex-controller i.fa {
+	display: inline-block;
+	width: 1.5em;
+	margin: 0 auto;
+	font-size: 1em;
+	line-height: 1.5em;
+	cursor: pointer;
+	color: #bbb;
+}
+
+.tablex-field > .tablex-controller i.fa:hover {
+	color: #000;
+}
+
+.tablex-field > .tablex-controller > .tablex-lock {
+	width: 1.5em;
+	text-align: center;
+	flex-shrink: 0;
+	flex-grow: 0;
+	cursor: pointer;
+}
+
+.tablex-field > .tablex-controller > .tablex-lock > i.fa {
+	color: #000;
+}
+
+.tablex-field > .tablex-controller > .column-controller {
+	width: 100%;
+	text-align: center;
+}
+
+.tablex-field > .tablex-controller > .add-column {
+	width: 2.75em;
+	text-align: center;
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tablex-field > .tablex-container {
+	background-color: transparent;
+	border: none;
+}
+
+.tablex-field > .tablex-container > .tablex-row {
+	position: relative;
+	display: flex;
+	border: 1px solid #ddd;
+	background-color: white;
+}
+
+.tablex-field > .tablex-container > .tablex-row.ui-sortable-placeholder {
+	border: 1px dashed #bbb;
+	visibility: visible !important;
+	background-color: transparent;
+	z-index: -999;
+}
+
+.tablex-field > .tablex-container > .tablex-row + .tablex-row {
+	margin-top: -1px;
+}
+
+.tablex-field > .tablex-container > .tablex-row > input {
+	border: none;
+	border-right: 1px solid #ddd;
+	line-height: 1.75em;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon {
+	position: relative;
+	pointer-events: auto;
+	top: 0;
+	bottom: 0;
+	right: auto;
+	width: 2.75em;
+	flex-shrink: 0;
+	flex-grow: 0;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.sortable-handle {
+	font-size: 1em;
+	width: 1.5em;
+	border-left: none;
+	border-right: 1px solid #ddd;
+	cursor: move;
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.sortable-handle > i.fa {
+	display: block;
+	margin: 0;
+	font-size: 1em;
+	line-height: 1em;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.sortable-handle > i.fa:first-child {
+	top: 0.15em;
+	bottom: auto;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.sortable-handle > i.fa:last-child {
+	top: auto;
+	bottom: 0.25em;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.sortable-handle:active {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .field-icon.delete-row {
+	cursor: pointer;
+	border-left: none;
+}
+
+
+.tablex-field > .tablex-container > .header-row {
+	padding: 0 2.75em 0 1.5em;
+	    position: relative;
+    display: flex;
+
+}
+
+.tablex-field > .tablex-container > .header-row > input { 
+    border: 1px solid #ddd;
+    background-color: white;
+
+}
+
+/* vue cloak hides everything before vue is done rendering dom. This can be used to make transition. */
+
+
+[v-cloak].tablex-field {
+	display: none;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+.tablex-field > .add-row {
+	position: relative;
+	padding: 0 2.75em 0 1.5em;
+	margin: 0.6875em 0 0 0;
+	width: 100%;
+	height: 2.75em;
+	background-color: transparent;
+	border: 1px dashed #bbb;
+	cursor: pointer;
+}
+
+.tablex-field > .add-row > i.fa {
+	display: block;
+	width: 2.75em;
+	height: 2.75em;
+	font-size: 1em;
+	line-height: 2.75em;
+	margin: -1px auto 0 auto;
+	color: #bbb;
+	text-align: center;
+}
+
+.tablex-field > .add-row:hover > i.fa {
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+.tablex-field > .tablex-controller i.fa.delete-column,
+.tablex-field > .tablex-controller .add-column,
+.tablex-field > .add-row {
+	opacity: 1;
+	transition: opacity 300ms;
+}
+
+.tablex-field.locked > .tablex-controller i.fa.delete-column,
+.tablex-field.locked > .tablex-controller .add-column,
+.tablex-field.locked > .add-row {
+	pointer-events: none;
+	opacity: 0.25;
+}
+
+.tablex-field > .tablex-container > .tablex-row > .sortable-handle > i.fa,
+.tablex-field > .tablex-container > .tablex-row > .delete-row > i.fa {
+	opacity: 1;
+	transition: opacity 300ms;
+}
+
+.tablex-field.locked > .tablex-container > .tablex-row > .sortable-handle,
+.tablex-field.locked > .tablex-container > .tablex-row > .delete-row {
+	pointer-events: none;
+}
+
+.tablex-field.locked > .tablex-container > .tablex-row > .sortable-handle > i.fa,
+.tablex-field.locked > .tablex-container > .tablex-row > .delete-row > i.fa {
+	opacity: .25;
+}
