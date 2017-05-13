@@ -15,10 +15,9 @@ ROW BLOCKS
 	display: flex;
 }
 
-.tablex-field .tablex-ctrl,
-.tablex-field .tablex-add-row {
+.tablex-field .tablex-ctrl {
 	border-left: 1px solid transparent;
-	border-right: 1px solid transparent;
+	border-right: 1px dashed #d7d7d7;
 }
 
 .tablex-field .tablex-row {
@@ -28,6 +27,11 @@ ROW BLOCKS
 
 .tablex-field .tablex-row:first-child {
 	border-top: 1px solid #ddd;
+}
+
+.tablex-field .tablex-add-row {
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
 }
 
 
@@ -44,16 +48,6 @@ CONTROLS BLOCKS
 	height: 1.5rem;
 }
 
-.tablex-field .tablex-ctrl .row-ctrl {
-	height: calc(1.5rem + 2px);
-	border-top: 1px solid transparent;
-	border-bottom: 1px solid transparent;
-}
-
-.tablex-field .tablex-row .row-ctrl {
-	height: 3rem;
-}
-
 .tablex-field .row-ctrl:first-child {
 	border-right: 1px solid #ddd;
 }
@@ -62,8 +56,26 @@ CONTROLS BLOCKS
 	border-left: 1px solid #ddd;
 }
 
-.tablex-field .tablex-ctrl .row-ctrl:first-child,
-.tablex-field .tablex-ctrl .row-ctrl:last-child,
+.tablex-field .tablex-ctrl .row-ctrl {
+	height: calc(1.5rem + 2px);
+}
+
+.tablex-field .tablex-ctrl .row-ctrl:first-child {
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}
+
+.tablex-field .tablex-ctrl .row-ctrl:last-child {
+	border-top: 1px dashed #d7d7d7;
+	border-bottom: 1px dashed transparent;
+	border-left: 1px solid transparent;
+}
+
+.tablex-field .tablex-row .row-ctrl {
+	height: 3rem;
+}
+
 .tablex-field .tablex-add-row .row-ctrl:first-child,
 .tablex-field .tablex-add-row .row-ctrl:last-child {
 	border-color: transparent;
@@ -118,8 +130,13 @@ CONTROLS ICONS
 	font-size: 12px;
 	line-height: 1.5rem;
 	text-align: center;
-	color: #ccc;
+	color: #bbb;
 	cursor: pointer;
+}
+
+.tablex-field i.fa.disabled {
+	pointer-events: none;
+	color: #e2e2e2;
 }
 
 .tablex-field i.fa:hover {

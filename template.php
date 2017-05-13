@@ -28,8 +28,8 @@ if(!empty($field->options())) {
 			<i class="fa fa-times-circle" v-show="columnCount > options.minColumns" v-on:click="deleteColumn(n)"></i>
 			<i class="fa fa-chevron-right" v-show="n !== columnCount"  v-on:click="moveColumn(n-1, 'right')"></i>
 		</div>
-		<div class="row-ctrl add-column" v-show="columnCount < options.maxColumns" v-on:click="addColumn()">
-			<i class="fa fa-plus"></i>
+		<div class="row-ctrl add-column">
+			<i class="fa fa-plus" v-show="columnCount < options.maxColumns" v-on:click="addColumn()"></i>
 		</div>
 	</div>
 
@@ -59,7 +59,7 @@ if(!empty($field->options())) {
 	<!-- Add Row Btn-->
 	<div class="tablex-add-row">
 		<div class="row-ctrl filling-block"></div>
-		<div class="row-cell" v-on:click="addRow()"><i class="fa fa-plus"></i></div>
+		<div class="row-cell"><i class="fa fa-plus" v-on:click="addRow()"></i></div>
 		<div class="row-ctrl filling-block"></div>
 	</div>
 </div>
