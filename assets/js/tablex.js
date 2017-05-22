@@ -89,9 +89,11 @@
 
                 console.log('omg');
 
-            _.forEach(this.tables, function(array) {
+                _.forEach(this.tables, function(array) {
                     _.move(array, colNum,colNum+direction);
                 });
+
+                _.move(this.header, colNum,colNum+direction);
             }
         },
       }
