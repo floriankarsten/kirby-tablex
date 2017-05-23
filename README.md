@@ -1,5 +1,5 @@
 # Kirby tablex
-Simple table field for Kirby CMS
+Simple table field for Kirby CMS. Advice, features and sugestions welcome.
 
 ![Kirby tablex GIF](https://raw.githubusercontent.com/floriankarsten/kirby-tablex/stuff/kirby-tablex.gif "Kirby tablex GIF")
 
@@ -22,6 +22,34 @@ Options are not required. Defaults are:
         minColumns: 1
         header: false
 ```
+
+In your template you can simply use kirbys ```toStructure()```
+
+Example:
+```
+			<?php $tableX = $page->table()->toStructure(); ?>
+			<div class="table">
+				<table>
+					<thead>
+						<tr>
+							<?php foreach($tableX->header() as $headerCell): ?>
+								<th><?= $headerCell; ?></th>
+							<?php endforeach; ?>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($tableX->tables() as $tableRow): ?>
+							<tr>
+								<?php foreach($tableRow as $tableCell): ?>
+									<td><?= $tableCell; ?></td>
+								<?php endforeach; ?>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+ ```
 
 
 
