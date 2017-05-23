@@ -1,8 +1,7 @@
 # Kirby tablex
 Simple table field for Kirby CMS
 
-![alt text](https://github.com/floriankarsten/kirby-ref/raw/stuff/kirby-ref.gif "Kirby ref GIF")
-
+![Kirby tablex GIF](https://raw.githubusercontent.com/floriankarsten/kirby-tablex/stuff/kirby-tablex.gif "Kirby tablex GIF")
 
 ## Usage
 
