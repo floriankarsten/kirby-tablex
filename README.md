@@ -1,6 +1,8 @@
 # Kirby tablex
 Simple table field for Kirby CMS. Advice, features and sugestions welcome.
 
+
+
 ![Kirby tablex GIF](https://raw.githubusercontent.com/floriankarsten/kirby-tablex/stuff/kirby-tablex.gif "Kirby tablex GIF")
 
 ## Usage
@@ -23,32 +25,59 @@ Options are not required. Defaults are:
         header: false
 ```
 
+Content is then structured as regular yaml arrays:
+```yaml
+Table: 
+
+header:
+  - Column 1 heading
+  - Column 2 heading
+  - Column 3 heading
+tables:
+  - 
+    - Column 1 row 1
+    - Column 2 row 1
+    - Column 3 row 1
+  - 
+    - Column 2 row 1
+    - Will be nothing after this
+    - Column 3 row 2
+  - 
+    - ""
+    - nothing
+    - Column 3 row 3
+  - 
+    - Column 4 row 1
+    - Real
+    - Column 3 row 4
+```
+
+
 In your template you can simply use kirbys ```toStructure()```
 
 Example:
-```
-			<?php $tableX = $page->table()->toStructure(); ?>
-			<div class="table">
-				<table>
-					<thead>
-						<tr>
-							<?php foreach($tableX->header() as $headerCell): ?>
-								<th><?= $headerCell; ?></th>
-							<?php endforeach; ?>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach($tableX->tables() as $tableRow): ?>
-							<tr>
-								<?php foreach($tableRow as $tableCell): ?>
-									<td><?= $tableCell; ?></td>
-								<?php endforeach; ?>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
-			</div>
-		</div>
+```php
+<?php $tableX = $page->table()->toStructure(); ?>
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<?php foreach($tableX->header() as $headerCell): ?>
+					<th><?= $headerCell; ?></th>
+				<?php endforeach; ?>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($tableX->tables() as $tableRow): ?>
+				<tr>
+					<?php foreach($tableRow as $tableCell): ?>
+						<td><?= $tableCell; ?></td>
+					<?php endforeach; ?>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+</div>
  ```
 
 
