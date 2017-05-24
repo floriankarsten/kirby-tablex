@@ -1,5 +1,6 @@
-# Kirby tablex
-Simple table field for Kirby CMS. Advice, features and sugestions welcome.
+![Kirby tablex ](https://raw.githubusercontent.com/floriankarsten/kirby-tablex/stuff/FKAPPROVED.png "Kirby tablex")
+
+Kirby tablex - simple table field for Kirby CMS. Advice, features and sugestions welcome.
 
 
 
