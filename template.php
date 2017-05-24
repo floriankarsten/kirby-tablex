@@ -5,15 +5,18 @@
 $tableData = '';
 $headerData = '';
 $options = '';
-if(!empty($field->value()['tables'])) {
-	$tableData = a::json($field->value()['tables']);
-
+if(!empty($field->value()['table'])) {
+	// $tableData = a::json($field->value()['table']);
+	// $tableData = json_encode($field->value()['table'], JSON_HEX_APOS);
+	$tableData = htmlspecialchars(json_encode($field->value()['table']), ENT_QUOTES, 'UTF-8');
 }
 if(!empty($field->value()['header'])) {
-	$headerData = a::json($field->value()['header']);
+	// $headerData = a::json($field->value()['header']);
+	$headerData = htmlspecialchars(json_encode($field->value()['header']), ENT_QUOTES, 'UTF-8');
 }
 if(!empty($field->options())) {
-	$options = a::json($field->options());
+	// $options = a::json($field->options());
+	$options = htmlspecialchars(json_encode($field->options()), ENT_QUOTES, 'UTF-8');
 }
 
 ?>
@@ -44,12 +47,12 @@ if(!empty($field->options())) {
 		</div>
 		
 		<!-- Row -->
-		<div class="tablex-row" v-for="(row, rowIndex) in tables">
+		<div class="tablex-row" v-for="(row, rowIndex) in table">
 			<div class="row-ctrl move-row">
 				<i class="fa fa-chevron-up" v-bind:class="{ disabled: rowIndex == 0 }" v-on:click="moveRow(rowIndex, 'up')"></i>
 				<i class="fa fa-chevron-down" v-bind:class="{ disabled: rowIndex == rowCount-1 }" v-on:click="moveRow(rowIndex,	'down')"></i>
 			</div>
-			<input class="row-cell input" type="text" :name="'<?= $field->name() ?>[tables]['+ rowIndex +']'"  v-model="row[cellIndex]"  v-for="(cell, cellIndex) in row">
+			<input class="row-cell input" type="text" :name="'<?= $field->name() ?>[table]['+ rowIndex +']'"  v-model="row[cellIndex]"  v-for="(cell, cellIndex) in row">
 			<div class="row-ctrl delete-row">
 				<i class="fa fa-times-circle" v-on:click="deleteRow(rowIndex)" v-show="rowCount > 1"></i>
 			</div>
