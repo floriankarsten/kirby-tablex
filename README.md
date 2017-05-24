@@ -113,5 +113,5 @@ You can of course have it as submodule.
 
 ## What we are not sure about - ideas, opinions welcome :)
 - Naming, we chose stupid name kirby-tablex because we were worried about namespace pollution.
-~~- How to properly pass data from kirby to JS. We are rendering ui only with JS. HTML doesn't come rendered from server. All data is passed to data-attribute of root element and taken from there. We are not sure how to make this safe properly. If you start to put \' and stuff like that into Tablex things will break.~~
+- ~~How to properly pass data from kirby to JS. We are rendering ui only with JS. HTML doesn't come rendered from server. All data is passed to data-attribute of root element and taken from there. We are not sure how to make this safe properly. If you start to put \' and stuff like that into Tablex things will break.~~
 
