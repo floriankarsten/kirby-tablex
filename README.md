@@ -89,11 +89,11 @@ Example:
 
 
 ## Installation
-To install the plugin, please put it in the `site/plugins` directory.  
-The plugin folder must be named `tablex`.
+To install the plugin, please put it in the `site/fields` directory.  
+The field folder must be named `tablex`.
 
 ```
-site/plugins/
+site/fields/
     tablex/
         tablex.php
         ...
