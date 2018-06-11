@@ -5,20 +5,7 @@
   }
 
   var parseCsv = function(text) {
-    var p = '', row = [''], ret = [row], i = 0, r = 0, s = !0, l;
-    for (l in text) {
-      l = text[l];
-      if ('"' === l) {
-        if (s && l === p) row[i] += l;
-        s = !s;
-      } else if (',' === l && s) l = row[++i] = '';
-      else if ('\n' === l && s) {
-        if ('\r' === p) row[i] = row[i].slice(0, -1);
-        row = ret[++r] = [l = '']; i = 0;
-      } else row[i] += l;
-      p = l;
-    }
-    return ret;
+    return Papa.parse(text).data;
   };
 
   var Tablex = function(element) {
@@ -45,9 +32,7 @@
         },
         encodedCsv: function() {
           var head = "data:text/csv;charset=utf-8,";
-          return head + this.table.map(function (row) {
-            return row.join(',');
-          }).join('\r\n');
+          return head + Papa.unparse(this.table);
         }
       },
       methods: {
@@ -115,10 +100,8 @@
             _.move(this.header, colNum,colNum+direction);
           }
         },
-        downloadCsv: function () {
-
-        },
-        uploadCsv: function (files) {
+        uploadCsv: function (ev) {
+          var files = ev.target.files;
           if (files.length) {
             var reader = new FileReader();
             reader.onload = function(ev){
@@ -135,10 +118,10 @@
               } else {
                 console.log('Uploaded table seems to be empty');
               }
-
             }.bind(this);
 
             reader.readAsText(files[0], 'UTF-8');
+            ev.currentTarget.value = '';
           }
 
         }

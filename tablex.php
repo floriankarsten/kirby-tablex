@@ -7,6 +7,7 @@ class TablexField extends BaseField {
       'lodash.js',
       'vue.js',
       'tablex.js',
+      'papaparse.min.js',
     ),
     'css' => array(
       'tablex.css'

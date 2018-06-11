@@ -186,14 +186,18 @@ Transitions
 	display: none;
 }
 
+.row-cell-upload {
+	position: relative;
+}
+
 .tablex-field .upload-btn {
-  height: 24px;
+	cursor: pointer;
+  height: 100%;
   left: 0;
-  opacity: 0;
   opacity: 0;
   position: absolute;
   top: 0;
-  width: 24px;
+  width: 100%;
   z-index: 1;
 }
 
