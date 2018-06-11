@@ -13,31 +13,19 @@ class TablexField extends BaseField {
     )
   );
 
-
-
   public function content() {
-    
-    
     return tpl::load(__DIR__ . DS . 'template.php', array('field' => $this));
-
-
-
   }
+
 //To retrieve a value
   public function value() {
     $value = parent::value();
     return yaml::decode($value);
   }
 
-
 //method determines what is saved to the file
   public function result() {
-
     $result = parent::result();
     return yaml::encode($result);
-    // return yaml::encode(['result' => $result, ['stuuf' =>'ishere']]);
   }
-
-
-
 }
