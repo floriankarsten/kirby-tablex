@@ -60,9 +60,20 @@ if(!empty($field->options())) {
 	</div>
 
 	<!-- Add Row Btn-->
-	<div class="tablex-add-row">
+	<div class="tablex-actions">
 		<div class="row-ctrl filling-block"></div>
-		<div class="row-cell"><i class="fa fa-plus" v-on:click="addRow()"></i></div>
+		<div class="row-cell">
+			<input class="upload-btn" type="file" @change="uploadCsv($event.target.files);" accept=".csv">
+			<i class="fa fa-upload"></i>
+		</div>
+		<div class="row-cell">
+			<a :href="encodedCsv" download="data.csv">
+				<i class="fa fa-download" v-on:click="downloadCsv()"></i>
+			</a>
+		</div>
+		<div class="row-cell">
+			<i class="fa fa-plus" v-on:click="addRow()"></i>
+		</div>
 		<div class="row-ctrl filling-block"></div>
 	</div>
 </div>
