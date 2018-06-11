@@ -128,9 +128,6 @@
                 if (parsed[0].length === this.table[0].length) {
                   parsed.forEach(function (row, rowIndex) {
                     this.$set(this.table, rowIndex, row);
-                    //row.forEach(function (cell, cellIndex) {
-
-                    //}.bind(this));
                   }.bind(this));
                 } else {
                   console.log('Uploaded column count doesnt match current table column count');
