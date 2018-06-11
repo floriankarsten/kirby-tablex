@@ -62,13 +62,13 @@ if(!empty($field->options())) {
 	<!-- Add Row Btn-->
 	<div class="tablex-actions">
 		<div class="row-ctrl filling-block"></div>
-		<div class="row-cell">
-			<input class="upload-btn" type="file" @change="uploadCsv($event.target.files);" accept=".csv">
+		<div class="row-cell row-cell-upload">
+			<input class="upload-btn" type="file" @change="uploadCsv($event);" accept=".csv">
 			<i class="fa fa-upload"></i>
 		</div>
 		<div class="row-cell">
 			<a :href="encodedCsv" download="data.csv">
-				<i class="fa fa-download" v-on:click="downloadCsv()"></i>
+				<i class="fa fa-download"></i>
 			</a>
 		</div>
 		<div class="row-cell">
