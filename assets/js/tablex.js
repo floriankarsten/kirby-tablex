@@ -32,7 +32,7 @@
         },
         encodedCsv: function() {
           var head = "data:text/csv;charset=utf-8,";
-          return head + Papa.unparse(this.table);
+          return head + Papa.unparse([this.header].concat(this.table));
         }
       },
       methods: {
@@ -108,13 +108,13 @@
               var text = ev.target.result;
               var parsed = parseCsv(text);
               if (parsed[0]) {
-                if (parsed[0].length === this.table[0].length) {
-                  parsed.forEach(function (row, rowIndex) {
-                    this.$set(this.table, rowIndex, row);
-                  }.bind(this));
-                } else {
-                  console.log('Uploaded column count doesnt match current table column count');
-                }
+                parsed[0].forEach(function (cell, index) {
+                  this.$set(this.header, index, cell);
+                }.bind(this));
+                parsed.splice(0, 1);
+                parsed.forEach(function (row, rowIndex) {
+                  this.$set(this.table, rowIndex, row);
+                }.bind(this));
               } else {
                 console.log('Uploaded table seems to be empty');
               }
