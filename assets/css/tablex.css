@@ -11,7 +11,7 @@ ROW BLOCKS
 
 .tablex-field .tablex-ctrl,
 .tablex-field .tablex-row,
-.tablex-field .tablex-add-row {
+.tablex-field .tablex-actions {
 	display: flex;
 }
 
@@ -56,7 +56,7 @@ CONTROLS BLOCKS
 }
 
 .tablex-field .tablex-row .row-ctrl,
-.tablex-field .tablex-add-row .row-ctrl {
+.tablex-field .tablex-actions .row-ctrl {
 	height: 3rem;
 }
 
@@ -65,20 +65,17 @@ CONTROLS BLOCKS
 	border-bottom-color: #d7d7d7;
 }
 
-.tablex-field .tablex-add-row .row-ctrl:first-child {
+.tablex-field .tablex-actions .row-ctrl:first-child {
 	border-color: transparent;
 }
 
-.tablex-field .tablex-add-row .row-ctrl:last-child {
+.tablex-field .tablex-actions .row-ctrl:last-child {
 	border-color: transparent;
 }
-
-
 
 /*
 CELLS
 */
-
 .tablex-field .row-cell {
 	position: relative;
 	width: 100%;
@@ -102,7 +99,7 @@ CELLS
 	font-weight: 700;
 }
 
-.tablex-field .tablex-add-row .row-cell {
+.tablex-field .tablex-actions .row-cell {
 	border-style: dashed;
 	border-left-color: #d7d7d7;
 	border-right-color: #d7d7d7;
@@ -171,19 +168,40 @@ CONTROLS ICONS
 }
 
 /* add row */
-.tablex-field .tablex-add-row i.fa-plus {
+.tablex-field .tablex-actions i.fa-plus,
+.tablex-field .tablex-actions i.fa-download,
+.tablex-field .tablex-actions i.fa-upload {
 	left: 0;
 	width: 100%;
 	height: 3rem;
 	line-height: 3rem;
+	font-size: 18px;
 }
-
 
 
 /*
 Transitions
 */
-
 [v-cloak].tablex-field {
 	display: none;
+}
+
+.row-cell-upload {
+	position: relative;
+}
+
+.tablex-field .upload-btn {
+	cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.tablex-field .upload-icon {
+  font-size: 30px;
+  cursor: pointer;
 }
