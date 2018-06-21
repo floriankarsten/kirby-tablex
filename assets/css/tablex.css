@@ -181,6 +181,28 @@ CONTROLS ICONS
 
 
 /*
+CAPTION
+*/
+
+.tablex-caption {
+	padding: 0 24px;
+}
+
+.tablex-caption input {
+	position: relative;
+	width: 100%;
+	height: 3rem;
+	padding-right: 0;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+
+.tablex-caption input:focus {
+	border-color: #ddd
+}
+
+
+/*
 Transitions
 */
 
