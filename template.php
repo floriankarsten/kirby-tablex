@@ -1,28 +1,10 @@
-<?php  //ref($field); ?>
-<?php
-
-// TODO: refactor?
-$tableData = '';
-$headerData = '';
-$options = '';
-if(!empty($field->value()['table'])) {
-	// $tableData = a::json($field->value()['table']);
-	// $tableData = json_encode($field->value()['table'], JSON_HEX_APOS);
-	$tableData = htmlspecialchars(json_encode($field->value()['table']), ENT_QUOTES, 'UTF-8');
-}
-if(!empty($field->value()['header'])) {
-	// $headerData = a::json($field->value()['header']);
-	$headerData = htmlspecialchars(json_encode($field->value()['header']), ENT_QUOTES, 'UTF-8');
-}
-if(!empty($field->options())) {
-	// $options = a::json($field->options());
-	$options = htmlspecialchars(json_encode($field->options()), ENT_QUOTES, 'UTF-8');
-}
-
-?>
-
-<div class="tablex-field field field-name-<?php echo $field->name(); ?>" v-cloak data-field='tablex' data-options='<?php echo $options ?>' data-tabledata='<?php echo $tableData ?>' data-headerdata='<?php echo $headerData ?>'>
+<div class="tablex-field field field-name-<?= $field['name'] ?>" v-cloak data-field='tablex' data-options='<?= $field['options'] ?>' data-tabledata='<?= $field['tableData'] ?>' data-headerdata='<?= $field['headerData'] ?>' data-caption='<?= $field['caption'] ?>'>
 	
+	<!-- Caption -->
+	<div class="tablex-caption">
+		<input class="caption input" :name="'<?= $field['name'] ?>[caption]'" type="text" :value="caption" v-on:leave="updateCaption(caption)" v-model="caption" placeholder="Table caption">
+	</div>
+
 	<!-- Column Controls -->
 	<div class="tablex-ctrl">
 		<div class="row-ctrl filling-block"></div>
@@ -42,7 +24,7 @@ if(!empty($field->options())) {
 		<!-- Header -->
 		<div class="tablex-row tablex-header" v-if="options.header">
 			<div class="row-ctrl"><i class="fa fa-header"></i></div>
-			<input class="row-cell input" type="text" :name="'<?= $field->name() ?>[header]'" v-model="header[cellIndex]"  v-for="(cell, cellIndex) in columnCount">
+			<input class="row-cell input" type="text" :name="'<?= $field['name'] ?>[header]'" v-model="header[cellIndex]"  v-for="(cell, cellIndex) in columnCount">
 			<div class="row-ctrl filling-block"></div>
 		</div>
 		
@@ -52,7 +34,7 @@ if(!empty($field->options())) {
 				<i class="fa fa-chevron-up" v-bind:class="{ disabled: rowIndex == 0 }" v-on:click="moveRow(rowIndex, 'up')"></i>
 				<i class="fa fa-chevron-down" v-bind:class="{ disabled: rowIndex == rowCount-1 }" v-on:click="moveRow(rowIndex,	'down')"></i>
 			</div>
-			<input class="row-cell input" type="text" :name="'<?= $field->name() ?>[table]['+ rowIndex +']'"  v-model="row[cellIndex]"  v-for="(cell, cellIndex) in row">
+			<input class="row-cell input" type="text" :name="'<?= $field['name'] ?>[table]['+ rowIndex +']'"  v-model="row[cellIndex]"  v-for="(cell, cellIndex) in row">
 			<div class="row-ctrl delete-row">
 				<i class="fa fa-times-circle" v-on:click="deleteRow(rowIndex)" v-show="rowCount > 1"></i>
 			</div>
