@@ -1,3 +1,5 @@
+# Kirby 2 only. There are no plans for Kirby 3 version yet.
+
 <!-- ![Kirby tablex ](https://raw.githubusercontent.com/floriankarsten/kirby-tablex/stuff/FKAPPROVED.png "Kirby tablex") -->
 # Kirby tablex
 
